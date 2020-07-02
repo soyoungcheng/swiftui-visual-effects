@@ -17,7 +17,7 @@ public struct BlurEffectModifier: ViewModifier {
 	#elseif os(macOS)
 	public func body(content: Content) -> some View {
 		content
-			.overlay(VisualEffectViewRepresentable())
+			.overlay(_VisualEffectViewRepresentable())
 	}
 	
 	#endif

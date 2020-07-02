@@ -15,7 +15,7 @@ public struct BlurEffect: View {
 	
 	#elseif os(macOS)
 	public var body: some View {
-		VisualEffectViewRepresentable()
+		_VisualEffectViewRepresentable()
 	}
 	
 	#endif

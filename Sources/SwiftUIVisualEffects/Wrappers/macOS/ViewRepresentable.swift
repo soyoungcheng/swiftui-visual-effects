@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct ViewRepresentable: NSViewRepresentable {
+struct _ViewRepresentable: NSViewRepresentable {
 	func makeNSView(context: Context) -> NSView {
 		NSView()
 	}
