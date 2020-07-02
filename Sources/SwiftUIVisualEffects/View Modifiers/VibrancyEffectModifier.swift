@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 /// Creates a vibrancy effect.
@@ -15,3 +17,5 @@ public struct VibrancyEffectModifier: ViewModifier {
 			.overlay(_VibrancyVisualEffectViewRepresentable(content: content))
 	}
 }
+
+#endif

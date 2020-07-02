@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 struct _BlurVisualEffectViewRepresentable: UIViewRepresentable {
@@ -13,3 +15,5 @@ struct _BlurVisualEffectViewRepresentable: UIViewRepresentable {
 		uiView.effect = UIBlurEffect(style: context.environment.blurEffectStyle)
 	}
 }
+
+#endif

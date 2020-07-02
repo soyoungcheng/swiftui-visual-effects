@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 public extension View {
@@ -29,3 +31,5 @@ public extension View {
 		environment(\.vibrancyEffectStyle, style)
 	}
 }
+
+#endif

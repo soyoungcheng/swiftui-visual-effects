@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 struct _VibrancyVisualEffectViewRepresentable<Content: View>: UIViewRepresentable {
@@ -51,3 +53,5 @@ extension _VibrancyVisualEffectViewRepresentable {
 		}
 	}
 }
+
+#endif

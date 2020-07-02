@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 extension EnvironmentValues {
@@ -14,3 +16,5 @@ extension EnvironmentValues {
 		}
 	}
 }
+
+#endif
