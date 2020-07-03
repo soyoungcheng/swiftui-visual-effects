@@ -7,11 +7,16 @@
 import SwiftUI
 
 struct _VisualEffectViewRepresentable: NSViewRepresentable {
-	func makeNSView(context: Context) -> NSView {
-		NSView()
+	func makeNSView(context: Context) -> NSVisualEffectView {
+		let visualEffectView = NSVisualEffectView()
+		visualEffectView.material = context.environment.blurEffectStyle
+		
+		return visualEffectView
 	}
 	
-	func updateNSView(_ nsView: NSView, context: Context) {}
+	func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+		nsView.material = context.environment.blurEffectStyle
+	}
 }
 
 #endif
