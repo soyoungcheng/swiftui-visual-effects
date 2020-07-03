@@ -9,7 +9,7 @@ struct BlurEffectStyleKey: EnvironmentKey {
 	static var defaultValue: UIBlurEffect.Style = .systemMaterial // (Per the human-interface guidelines.)
 	
 	#elseif os(macOS)
-	static var defaultValue: NSVisualEffectView.Material = .contentBackground; #warning("verify default value")
+	static var defaultValue: NSVisualEffectView.Material = .headerView; #warning("verify default value")
 	
 	#endif
 }
