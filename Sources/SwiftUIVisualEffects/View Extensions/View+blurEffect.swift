@@ -2,6 +2,8 @@
 * SwiftUIVisualEffects
 */
 
+#if os(iOS)
+
 import SwiftUI
 
 public extension View {
@@ -10,3 +12,5 @@ public extension View {
 		ModifiedContent(content: self, modifier: BlurEffectModifier())
 	}
 }
+
+#endif
