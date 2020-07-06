@@ -6,27 +6,35 @@
 
 import SwiftUI
 
-struct VisualEffectView<Content: View>: NSViewRepresentable {
-	init(material: NSVisualEffectView.Material, allowsVibrancy: Bool, @ViewBuilder content: () -> Content) {
+public struct VisualEffectView<Content: View>: NSViewRepresentable {
+	public init(
+		material: NSVisualEffectView.Material,
+		allowsVibrancy: Bool,
+		blendingMode: NSVisualEffectView.BlendingMode = .behindWindow,
+		@ViewBuilder content: () -> Content
+	) {
 		self.material = material
+		self.blendingMode = blendingMode
 		self.allowsVibrancy = allowsVibrancy
 		self.content = content()
 	}
 	
-	func makeNSView(context: Context) -> NSVisualEffectView {
+	public func makeNSView(context: Context) -> NSVisualEffectView {
 		let visualEffectView = NSVisualEffectView()
 		visualEffectView.addSubview(
 			allowsVibrancy ? HostingView(rootView: content) : NSHostingView(rootView: content)
 		)
+		visualEffectView.blendingMode = blendingMode
 		visualEffectView.material = material
 		visualEffectView.subviews.first?.autoresizingMask = [.width, .height]
 		
 		return visualEffectView
 	}
 	
-	func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
+	public func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
 	
 	private let allowsVibrancy: Bool
+	private let blendingMode: NSVisualEffectView.BlendingMode
 	private let content: Content
 	private let material: NSVisualEffectView.Material
 }
